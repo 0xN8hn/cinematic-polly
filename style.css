@@ -1,0 +1,38 @@
+body{
+    height: 110vh;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    display: flex;
+    height: 25%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.header img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.menu{
+
+}
+
+.nav{
+
+}
+
+.konten{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60%;
+    width: 100%;
+    border: solid black 4px;
+    border-radius: 8px;
+}
