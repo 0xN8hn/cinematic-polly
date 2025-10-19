@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>About Us - Coffee Shop</title>
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/512/14075/14075789.png">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://cdn-icons-png.freepik.com/512/14075/14075789.png" alt="Logo" width="50">
+                <span>Coffee Shop</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="halaman1.html">Main</a></li>
+                <li><a href="halaman2.html" class="active">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="about-grid">
+            <div class="about-item">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tentang Kami">
+                <h3>Tentang Kami</h3>
+                <p>Selamat datang di Coffee Shop kami! Kami adalah tempat yang hangat dan nyaman untuk menikmati kopi berkualitas tinggi dan suasana yang ramah. Didirikan pada tahun 2010, kami berkomitmen untuk menyajikan kopi terbaik dari biji pilihan.</p>
+            </div>
+            <div class="about-item">
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Menu Unggulan">
+                <h3>Menu Unggulan</h3>
+                <p>Nikmati menu unggulan kami seperti Espresso, Cappuccino, Latte, dan Mocha. Semua diseduh dengan cinta oleh barista berpengalaman. Jangan lupa coba pastries segar kami!</p>
+            </div>
+            <div class="about-item">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Lokasi Kami">
+                <h3>Lokasi Kami</h3>
+                <p>Kunjungi kami di Jalan Kopi No. 123, Kota Jakarta, Indonesia. Kami buka setiap hari dari pukul 07:00 hingga 22:00. Ikuti kami di media sosial untuk update terbaru!</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Coffee Shop. Semua hak dilindungi.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

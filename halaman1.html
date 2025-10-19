@@ -1,24 +1,103 @@
 <html>
-    <head>
-        <title></title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="https://tzuchi.sch.id/wp-content/uploads/2024/02/cropped-tsu-chi-school-logo-favicon-img-1.png">
-    </head>
-    <body>
-        <div class="header">
-            <img src="https://tse4.mm.bing.net/th/id/OIP.Sow4xoBsjjCiN2Q3y-ukCwHaDq?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Tzu Chi">
+<head>
+    <title>Main - Website Saya</title>
+    <link rel="icon" href="https://cdn-icons-png.freepik.com/512/14075/14075789.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://cdn-icons-png.freepik.com/512/14075/14075789.png" alt="Logo" width="50">
+                <span>Coffee Shop</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="halaman1.html" class="active">Main</a></li>
+                <li><a href="halaman2.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <video id="video1" width="100%" height="400" autoplay muted>
+                    <source src="videoplayback.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video.
+                </video>
+            </div>
+            <div class="slide fade">
+                <video id="video2" width="100%" height="400" autoplay muted>
+                    <source src="videoplayback.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video.
+                </video>
+                <div class="caption">Caption Video 2: Deskripsi singkat untuk video kedua.</div>
+            </div>
+            <div class="slide fade">
+                <video id="video3" width="100%" height="400" autoplay muted>
+                    <source src="videoplayback.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video.
+                </video>
+                <div class="caption">Caption Video 3: Deskripsi singkat untuk video ketiga.</div>
+            </div>
+            <div class="slide fade">
+                <video id="video4" width="100%" height="400" autoplay muted>
+                    <source src="videoplayback.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung video.
+                </video>
+                <div class="caption">Caption Video 4: Deskripsi singkat untuk video keempat.</div>
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">❮</button>
+            <button class="next" onclick="changeSlide(1)">❯</button>
         </div>
-        <table class="menu">
-            <tr>
-                <td class="nav"></td>
-                <td class="nav"></td>
-            </tr>
-        </table>
-        <div class="konten">
+        
+        <div class="caption">Caption Video 1: Deskripsi singkat untuk video pertama.</div>
+        <div class="activity-description">
+            <h2>Keterangan Aktivitas</h2>
+            <p>Di sini Anda bisa menjelaskan aktivitas yang ditampilkan dalam video slideshow. Misalnya, ini adalah dokumentasi kegiatan olahraga, pendidikan, atau acara komunitas. Tambahkan detail lebih lanjut sesuai kebutuhan, seperti tanggal, lokasi, atau peserta. Teks ini dapat diperpanjang atau disesuaikan untuk memberikan informasi yang berguna kepada pengunjung website.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Website Saya. Semua hak dilindungi.</p>
+    </footer>
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const videos = document.querySelectorAll('video');
 
-        </div>
-        <div class="footer">
+        // Menampilkan slide pertama saat halaman load (tanpa autoplay)
+        slides[0].style.display = 'block';
 
-        </div>
-    </body>
+        function showSlides() {
+            slides.forEach(slide => slide.style.display = 'none');
+            videos.forEach(video => {
+                video.pause();
+                video.currentTime = 0;
+            });
+            slideIndex = (slideIndex + 1) % slides.length;
+            slides[slideIndex - 1].style.display = 'block';
+            videos[slideIndex - 1].play();
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            slides.forEach(slide => slide.style.display = 'none');
+            videos.forEach(video => video.pause());
+            slides[slideIndex].style.display = 'block';
+            videos[slideIndex].play();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
 </html>
